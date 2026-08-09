@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Greeting Form</h1>
+        <form method="post" action="/greet">
+            <input type="text" name="username" placeholder="Enter your name">
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if greeting %}
+            <div class="result">{{ greeting }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
